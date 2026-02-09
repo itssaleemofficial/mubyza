@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalonPro - Salon Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-cut"></i> SalonPro</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="menu-item active" data-page="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#" class="menu-item" data-page="reception"><i class="fas fa-desktop"></i> Reception</a></li>
+                <li><a href="#" class="menu-item" data-page="scheduler"><i class="fas fa-calendar-alt"></i> Scheduler</a></li>
+                <li><a href="#" class="menu-item" data-page="appointments"><i class="fas fa-calendar"></i> Appointments</a></li>
+                <li><a href="#" class="menu-item" data-page="clients"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="#" class="menu-item" data-page="staff"><i class="fas fa-user-tie"></i> Staff</a></li>
+                <li><a href="#" class="menu-item" data-page="services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                <li><a href="#" class="menu-item" data-page="inventory"><i class="fas fa-box"></i> Inventory</a></li>
+                <li><a href="#" class="menu-item" data-page="pos"><i class="fas fa-cash-register"></i> Point of Sale</a></li>
+                <li><a href="#" class="menu-item" data-page="reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                <li><a href="#" class="menu-item" data-page="settings"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search clients, appointments...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://picsum.photos/seed/user1/40/40.jpg" alt="User">
+                        <span>John Doe</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content" id="page-content">
+                <!-- Dashboard Page -->
+                <div class="page" id="dashboard-page">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Today's Appointments</h3>
+                                <p class="stat-number">12</p>
+                                <span class="stat-change positive">+2 from yesterday</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Today's Revenue</h3>
+                                <p class="stat-number">$1,245</p>
+                                <span class="stat-change positive">+15% from yesterday</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>New Clients</h3>
+                                <p class="stat-number">3</p>
+                                <span class="stat-change neutral">Same as last week</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Low Stock Items</h3>
+                                <p class="stat-number">5</p>
+                                <span class="stat-change negative">Needs attention</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-section">
+                            <h3>Today's Schedule</h3>
+                            <div class="schedule-list">
+                                <div class="schedule-item">
+                                    <div class="time">9:00 AM</div>
+                                    <div class="client-info">
+                                        <img src="https://picsum.photos/seed/client1/40/40.jpg" alt="Client">
+                                        <div>
+                                            <p class="client-name">Sarah Johnson</p>
+                                            <p class="service">Hair Color & Cut</p>
+                                        </div>
+                                    </div>
+                                    <div class="staff">Emma Wilson</div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="time">10:30 AM</div>
+                                    <div class="client-info">
+                                        <img src="https://picsum.photos/seed/client2/40/40.jpg" alt="Client">
+                                        <div>
+                                            <p class="client-name">Maria Garcia</p>
+                                            <p class="service">Manicure & Pedicure</p>
+                                        </div>
+                                    </div>
+                                    <div class="staff">Lisa Chen</div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="time">11:00 AM</div>
+                                    <div class="client-info">
+                                        <img src="https://picsum.photos/seed/client3/40/40.jpg" alt="Client">
+                                        <div>
+                                            <p class="client-name">Jennifer Smith</p>
+                                            <p class="service">Facial Treatment</p>
+                                        </div>
+                                    </div>
+                                    <div class="staff">Anna Davis</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-section">
+                            <h3>Recent Activity</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <i class="fas fa-check-circle completed"></i>
+                                    <div class="activity-details">
+                                        <p>Appointment completed - Sarah Johnson</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <i class="fas fa-user-plus new-client"></i>
+                                    <div class="activity-details">
+                                        <p>New client registered - Michael Brown</p>
+                                        <span class="activity-time">3 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <i class="fas fa-shopping-cart sale"></i>
+                                    <div class="activity-details">
+                                        <p>Sale completed - $125.50</p>
+                                        <span class="activity-time">4 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointments Page -->
+                <div class="page" id="appointments-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Appointments</h2>
+                        <button class="btn btn-primary" id="new-appointment-btn">
+                            <i class="fas fa-plus"></i> New Appointment
+                        </button>
+                    </div>
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <button class="calendar-nav"><i class="fas fa-chevron-left"></i></button>
+                            <h3 id="current-month">February 2026</h3>
+                            <button class="calendar-nav"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="calendar-grid">
+                            <div class="calendar-day-header">Sun</div>
+                            <div class="calendar-day-header">Mon</div>
+                            <div class="calendar-day-header">Tue</div>
+                            <div class="calendar-day-header">Wed</div>
+                            <div class="calendar-day-header">Thu</div>
+                            <div class="calendar-day-header">Fri</div>
+                            <div class="calendar-day-header">Sat</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Scheduler Page -->
+                <div class="page" id="scheduler-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Advanced Scheduler</h2>
+                        <div class="scheduler-controls">
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="week">Week</button>
+                                <button class="view-btn" data-view="day">Day</button>
+                                <button class="view-btn" data-view="month">Month</button>
+                            </div>
+                            <button class="btn btn-primary" id="schedule-appointment-btn">
+                                <i class="fas fa-plus"></i> Schedule Appointment
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="scheduler-toolbar">
+                        <div class="date-navigation">
+                            <button class="nav-btn" id="prev-period">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span class="current-period" id="current-period">Feb 6 - Feb 12, 2026</span>
+                            <button class="nav-btn" id="next-period">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="today-btn" id="today-btn">Today</button>
+                        </div>
+                        <div class="filter-options">
+                            <select class="staff-filter" id="staff-filter">
+                                <option value="all">All Staff</option>
+                                <option value="1">Emma Wilson</option>
+                                <option value="2">Lisa Chen</option>
+                                <option value="3">Anna Davis</option>
+                                <option value="4">Michael Brown</option>
+                            </select>
+                            <select class="service-filter" id="service-filter">
+                                <option value="all">All Services</option>
+                                <option value="hair">Hair Services</option>
+                                <option value="nails">Nail Services</option>
+                                <option value="beauty">Beauty Services</option>
+                                <option value="wellness">Wellness</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="scheduler-container">
+                        <!-- Week View -->
+                        <div class="scheduler-view week-view active" id="week-view">
+                            <div class="time-column">
+                                <div class="time-header">Time</div>
+                                <div class="time-slots">
+                                    <div class="time-slot">8:00 AM</div>
+                                    <div class="time-slot">9:00 AM</div>
+                                    <div class="time-slot">10:00 AM</div>
+                                    <div class="time-slot">11:00 AM</div>
+                                    <div class="time-slot">12:00 PM</div>
+                                    <div class="time-slot">1:00 PM</div>
+                                    <div class="time-slot">2:00 PM</div>
+                                    <div class="time-slot">3:00 PM</div>
+                                    <div class="time-slot">4:00 PM</div>
+                                    <div class="time-slot">5:00 PM</div>
+                                    <div class="time-slot">6:00 PM</div>
+                                    <div class="time-slot">7:00 PM</div>
+                                </div>
+                            </div>
+                            <div class="days-container" id="week-days-container">
+                                <!-- Days will be generated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Day View -->
+                        <div class="scheduler-view day-view" id="day-view" style="display: none;">
+                            <div class="day-schedule">
+                                <div class="day-header">
+                                    <h3 id="day-view-date">Today, February 6, 2026</h3>
+                                </div>
+                                <div class="day-timeline">
+                                    <div class="timeline-hours">
+                                        <div class="hour">8:00 AM</div>
+                                        <div class="hour">9:00 AM</div>
+                                        <div class="hour">10:00 AM</div>
+                                        <div class="hour">11:00 AM</div>
+                                        <div class="hour">12:00 PM</div>
+                                        <div class="hour">1:00 PM</div>
+                                        <div class="hour">2:00 PM</div>
+                                        <div class="hour">3:00 PM</div>
+                                        <div class="hour">4:00 PM</div>
+                                        <div class="hour">5:00 PM</div>
+                                        <div class="hour">6:00 PM</div>
+                                        <div class="hour">7:00 PM</div>
+                                    </div>
+                                    <div class="timeline-content" id="day-timeline-content">
+                                        <!-- Appointments will be rendered here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Month View -->
+                        <div class="scheduler-view month-view" id="month-view" style="display: none;">
+                            <div class="month-calendar">
+                                <div class="month-header">
+                                    <div class="month-nav">
+                                        <button class="month-nav-btn" id="prev-month">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <h3 id="month-title">February 2026</h3>
+                                        <button class="month-nav-btn" id="next-month">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="month-grid" id="month-grid">
+                                    <!-- Calendar will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions Panel -->
+                    <div class="quick-actions-panel">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" id="block-time-btn">
+                                <i class="fas fa-ban"></i> Block Time
+                            </button>
+                            <button class="quick-action-btn" id="recurring-appointment-btn">
+                                <i class="fas fa-repeat"></i> Recurring
+                            </button>
+                            <button class="quick-action-btn" id="waitlist-btn">
+                                <i class="fas fa-clock"></i> Waitlist
+                            </button>
+                            <button class="quick-action-btn" id="availability-btn">
+                                <i class="fas fa-user-check"></i> Availability
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Staff Availability Panel -->
+                    <div class="staff-availability-panel">
+                        <h3>Staff Availability</h3>
+                        <div class="staff-availability-grid" id="staff-availability-grid">
+                            <!-- Staff availability will be shown here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reception Page -->
+                <div class="page" id="reception-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Reception Dashboard</h2>
+                        <div class="reception-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Today's Appointments</span>
+                                <span class="stat-value">12</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Pending Orders</span>
+                                <span class="stat-value">5</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Today's Revenue</span>
+                                <span class="stat-value">$1,245</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reception-grid">
+                        <!-- Financial Section -->
+                        <div class="reception-section">
+                            <h3><i class="fas fa-dollar-sign"></i> Financial</h3>
+                            <div class="section-grid">
+                                <div class="reception-item" data-page="today-invoices">
+                                    <i class="fas fa-file-invoice"></i>
+                                    <span>Today's Invoices</span>
+                                </div>
+                                <div class="reception-item" data-page="today-vouchers">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <span>Today's Vouchers</span>
+                                </div>
+                                <div class="reception-item" data-page="recovery">
+                                    <i class="fas fa-undo"></i>
+                                    <span>Recovery</span>
+                                </div>
+                                <div class="reception-item" data-page="pending-orders">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Pending Orders</span>
+                                </div>
+                                <div class="reception-item" data-page="daily-expenses">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <span>Daily Expenses</span>
+                                </div>
+                                <div class="reception-item" data-page="package-invo">
+                                    <i class="fas fa-box"></i>
+                                    <span>Package Invo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Appointments & Bookings Section -->
+                        <div class="reception-section">
+                            <h3><i class="fas fa-calendar"></i> Appointments & Bookings</h3>
+                            <div class="section-grid">
+                                <div class="reception-item" data-page="reception-appointments">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span>Appointments</span>
+                                </div>
+                                <div class="reception-item" data-page="bookings">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    <span>Bookings</span>
+                                </div>
+                                <div class="reception-item" data-page="daily-sheet">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <span>Daily Sheet</span>
+                                </div>
+                                <div class="reception-item" data-page="daily-summary">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Daily Summary</span>
+                                </div>
+                                <div class="reception-item" data-page="staff-days">
+                                    <i class="fas fa-user-clock"></i>
+                                    <span>Staff Days</span>
+                                </div>
+                                <div class="reception-item" data-page="business">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>Business</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Products & Services Section -->
+                        <div class="reception-section">
+                            <h3><i class="fas fa-shopping-bag"></i> Products & Services</h3>
+                            <div class="section-grid">
+                                <div class="reception-item" data-page="price-list">
+                                    <i class="fas fa-tag"></i>
+                                    <span>Price List</span>
+                                </div>
+                                <div class="reception-item" data-page="product-list">
+                                    <i class="fas fa-list"></i>
+                                    <span>Product List</span>
+                                </div>
+                                <div class="reception-item" data-page="un-invoiced-visits">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>Un Invoiced Visits</span>
+                                </div>
+                                <div class="reception-item" data-page="pos-retail">
+                                    <i class="fas fa-cash-register"></i>
+                                    <span>POS Retail</span>
+                                </div>
+                                <div class="reception-item" data-page="pos-services">
+                                    <i class="fas fa-concierge-bell"></i>
+                                    <span>POS-Services</span>
+                                </div>
+                                <div class="reception-item" data-page="staff-performance">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Staff Performance</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Records Section -->
+                        <div class="reception-section">
+                            <h3><i class="fas fa-folder"></i> Records</h3>
+                            <div class="section-grid">
+                                <div class="reception-item" data-page="eyelashes-records">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Eye lashes Record</span>
+                                </div>
+                                <div class="reception-item" data-page="facial-records">
+                                    <i class="fas fa-spa"></i>
+                                    <span>Facial records</span>
+                                </div>
+                                <div class="reception-item" data-page="color-records">
+                                    <i class="fas fa-palette"></i>
+                                    <span>Color Records</span>
+                                </div>
+                                <div class="reception-item" data-page="dispatch-notes">
+                                    <i class="fas fa-truck"></i>
+                                    <span>Dispatch Notes Listing</span>
+                                </div>
+                                <div class="reception-item" data-page="receiving-notes">
+                                    <i class="fas fa-box-open"></i>
+                                    <span>Receiving Notes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bookings Management Section -->
+                        <div class="reception-section">
+                            <h3><i class="fas fa-calendar-alt"></i> Bookings Management</h3>
+                            <div class="section-grid">
+                                <div class="reception-item" data-page="period-bookings">
+                                    <i class="fas fa-calendar-week"></i>
+                                    <span>Period Bookings</span>
+                                </div>
+                                <div class="reception-item" data-page="agent-wise-bookings">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>Agent Wise Bookings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reception Sub-Pages -->
+                <!-- Today's Invoices -->
+                <div class="page" id="today-invoices-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Today's Invoices</h2>
+                        <button class="btn btn-primary" id="new-invoice-btn">
+                            <i class="fas fa-plus"></i> New Invoice
+                        </button>
+                    </div>
+                    <div class="invoices-container">
+                        <div class="invoice-filters">
+                            <input type="text" placeholder="Search invoices..." class="search-input">
+                            <select class="filter-select">
+                                <option>All Status</option>
+                                <option>Paid</option>
+                                <option>Pending</option>
+                                <option>Overdue</option>
+                            </select>
+                        </div>
+                        <div class="invoices-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Invoice #</th>
+                                        <th>Client</th>
+                                        <th>Services</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Time</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="invoices-tbody">
+                                    <!-- Invoices will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Vouchers -->
+                <div class="page" id="today-vouchers-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Today's Vouchers</h2>
+                        <button class="btn btn-primary" id="new-voucher-btn">
+                            <i class="fas fa-plus"></i> New Voucher
+                        </button>
+                    </div>
+                    <div class="vouchers-container">
+                        <div class="voucher-stats">
+                            <div class="stat-card">
+                                <h3>Total Vouchers</h3>
+                                <p class="stat-number">8</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Total Value</h3>
+                                <p class="stat-number">$450</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Redeemed</h3>
+                                <p class="stat-number">3</p>
+                            </div>
+                        </div>
+                        <div class="vouchers-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Voucher #</th>
+                                        <th>Client</th>
+                                        <th>Type</th>
+                                        <th>Value</th>
+                                        <th>Status</th>
+                                        <th>Expiry</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="vouchers-tbody">
+                                    <!-- Vouchers will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recovery -->
+                <div class="page" id="recovery-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Recovery</h2>
+                        <div class="recovery-filters">
+                            <select class="filter-select">
+                                <option>All Recovery</option>
+                                <option>This Week</option>
+                                <option>This Month</option>
+                                <option>Overdue</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="recovery-container">
+                        <div class="recovery-stats">
+                            <div class="stat-card">
+                                <h3>Total Outstanding</h3>
+                                <p class="stat-number">$2,340</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Overdue Amount</h3>
+                                <p class="stat-number">$850</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Recovered This Month</h3>
+                                <p class="stat-number">$1,200</p>
+                            </div>
+                        </div>
+                        <div class="recovery-list">
+                            <!-- Recovery items will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Orders -->
+                <div class="page" id="pending-orders-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Pending Orders</h2>
+                        <button class="btn btn-primary" id="new-order-btn">
+                            <i class="fas fa-plus"></i> New Order
+                        </button>
+                    </div>
+                    <div class="orders-container">
+                        <div class="orders-filters">
+                            <select class="filter-select">
+                                <option>All Orders</option>
+                                <option>Products</option>
+                                <option>Services</option>
+                            </select>
+                        </div>
+                        <div class="orders-grid" id="orders-grid">
+                            <!-- Orders will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Expenses -->
+                <div class="page" id="daily-expenses-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Daily Expenses</h2>
+                        <button class="btn btn-primary" id="add-expense-btn">
+                            <i class="fas fa-plus"></i> Add Expense
+                        </button>
+                    </div>
+                    <div class="expenses-container">
+                        <div class="expense-summary">
+                            <div class="summary-item">
+                                <span>Total Expenses:</span>
+                                <span class="amount">$245.50</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Budget Remaining:</span>
+                                <span class="amount positive">$754.50</span>
+                            </div>
+                        </div>
+                        <div class="expenses-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Category</th>
+                                        <th>Amount</th>
+                                        <th>Time</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="expenses-tbody">
+                                    <!-- Expenses will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Invo -->
+                <div class="page" id="package-invo-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Package Invoicing</h2>
+                        <button class="btn btn-primary" id="create-package-btn">
+                            <i class="fas fa-plus"></i> Create Package
+                        </button>
+                    </div>
+                    <div class="packages-container">
+                        <div class="packages-grid" id="packages-grid">
+                            <!-- Packages will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointments -->
+                <div class="page" id="reception-appointments-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Appointments</h2>
+                        <button class="btn btn-primary" id="book-appointment-btn">
+                            <i class="fas fa-plus"></i> Book Appointment
+                        </button>
+                    </div>
+                    <div class="appointments-dashboard">
+                        <div class="today-appointments">
+                            <h3>Today's Schedule</h3>
+                            <div class="appointments-list" id="reception-appointments-list">
+                                <!-- Appointments will be populated here -->
+                            </div>
+                        </div>
+                        <div class="appointment-stats">
+                            <div class="stat-card">
+                                <h3>Confirmed</h3>
+                                <p class="stat-number">8</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Pending</h3>
+                                <p class="stat-number">3</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Cancelled</h3>
+                                <p class="stat-number">1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bookings -->
+                <div class="page" id="bookings-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Bookings</h2>
+                        <button class="btn btn-primary" id="add-booking-btn">
+                            <i class="fas fa-plus"></i> Add Booking
+                        </button>
+                    </div>
+                    <div class="bookings-container">
+                        <div class="booking-filters">
+                            <input type="date" class="date-input">
+                            <select class="filter-select">
+                                <option>All Status</option>
+                                <option>Confirmed</option>
+                                <option>Tentative</option>
+                                <option>Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="bookings-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Client</th>
+                                        <th>Service</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookings-tbody">
+                                    <!-- Bookings will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Sheet -->
+                <div class="page" id="daily-sheet-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Daily Sheet</h2>
+                        <div class="date-selector">
+                            <input type="date" id="daily-sheet-date" class="date-input">
+                        </div>
+                    </div>
+                    <div class="daily-sheet-container">
+                        <div class="sheet-summary">
+                            <div class="summary-row">
+                                <span>Date:</span>
+                                <span id="sheet-date">February 6, 2026</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Total Appointments:</span>
+                                <span id="sheet-total-appointments">12</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Total Revenue:</span>
+                                <span id="sheet-total-revenue">$1,245</span>
+                            </div>
+                        </div>
+                        <div class="sheet-details">
+                            <h3>Appointment Details</h3>
+                            <div class="sheet-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Client</th>
+                                            <th>Service</th>
+                                            <th>Staff</th>
+                                            <th>Status</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sheet-tbody">
+                                        <!-- Sheet details will be populated here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Summary -->
+                <div class="page" id="daily-summary-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Daily Summary</h2>
+                        <div class="summary-controls">
+                            <input type="date" id="summary-date" class="date-input">
+                            <button class="btn btn-secondary" id="export-summary-btn">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="summary-container">
+                        <div class="summary-cards">
+                            <div class="summary-card">
+                                <h3>Revenue</h3>
+                                <p class="summary-number">$1,245</p>
+                                <p class="summary-detail">12 transactions</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>Appointments</h3>
+                                <p class="summary-number">12</p>
+                                <p class="summary-detail">10 completed, 2 pending</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>New Clients</h3>
+                                <p class="summary-number">3</p>
+                                <p class="summary-detail">20% conversion rate</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>Products Sold</h3>
+                                <p class="summary-number">8</p>
+                                <p class="summary-detail">$320 revenue</p>
+                            </div>
+                        </div>
+                        <div class="summary-charts">
+                            <div class="chart-card">
+                                <h3>Hourly Revenue</h3>
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-line"></i>
+                                    <p>Revenue chart will be displayed here</p>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Service Distribution</h3>
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-pie"></i>
+                                    <p>Service distribution chart will be displayed here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Staff Days -->
+                <div class="page" id="staff-days-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Staff Days</h2>
+                        <div class="staff-filters">
+                            <select class="filter-select">
+                                <option>All Staff</option>
+                                <option>Emma Wilson</option>
+                                <option>Lisa Chen</option>
+                                <option>Anna Davis</option>
+                                <option>Michael Brown</option>
+                            </select>
+                            <input type="date" class="date-input">
+                        </div>
+                    </div>
+                    <div class="staff-days-container">
+                        <div class="staff-schedule-grid" id="staff-schedule-grid">
+                            <!-- Staff schedules will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business -->
+                <div class="page" id="business-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Business Overview</h2>
+                        <div class="period-selector">
+                            <select class="filter-select">
+                                <option>Today</option>
+                                <option>This Week</option>
+                                <option>This Month</option>
+                                <option>This Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="business-container">
+                        <div class="business-metrics">
+                            <div class="metric-card">
+                                <h3>Total Revenue</h3>
+                                <p class="metric-number">$8,450</p>
+                                <p class="metric-change positive">+12% from last period</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Total Clients</h3>
+                                <p class="metric-number">145</p>
+                                <p class="metric-change positive">+8 new clients</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Occupancy Rate</h3>
+                                <p class="metric-number">78%</p>
+                                <p class="metric-change neutral">Same as last period</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Average Transaction</h3>
+                                <p class="metric-number">$58</p>
+                                <p class="metric-change positive">+5% from last period</p>
+                            </div>
+                        </div>
+                        <div class="business-details">
+                            <h3>Recent Transactions</h3>
+                            <div class="transactions-list">
+                                <!-- Transactions will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price List -->
+                <div class="page" id="price-list-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Price List</h2>
+                        <button class="btn btn-primary" id="update-price-btn">
+                            <i class="fas fa-edit"></i> Update Prices
+                        </button>
+                    </div>
+                    <div class="price-list-container">
+                        <div class="price-categories">
+                            <button class="category-btn active" data-category="all">All</button>
+                            <button class="category-btn" data-category="hair">Hair</button>
+                            <button class="category-btn" data-category="nails">Nails</button>
+                            <button class="category-btn" data-category="beauty">Beauty</button>
+                            <button class="category-btn" data-category="wellness">Wellness</button>
+                        </div>
+                        <div class="price-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Service</th>
+                                        <th>Category</th>
+                                        <th>Duration</th>
+                                        <th>Price</th>
+                                        <th>Last Updated</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="price-tbody">
+                                    <!-- Price list will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product List -->
+                <div class="page" id="product-list-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Product List</h2>
+                        <button class="btn btn-primary" id="add-product-reception-btn">
+                            <i class="fas fa-plus"></i> Add Product
+                        </button>
+                    </div>
+                    <div class="product-list-container">
+                        <div class="product-filters">
+                            <input type="text" placeholder="Search products..." class="search-input">
+                            <select class="filter-select">
+                                <option>All Categories</option>
+                                <option>Hair Care</option>
+                                <option>Skin Care</option>
+                                <option>Nails</option>
+                                <option>Wellness</option>
+                            </select>
+                        </div>
+                        <div class="products-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Stock</th>
+                                        <th>Price</th>
+                                        <th>Supplier</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="products-tbody">
+                                    <!-- Products will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Un Invoiced Visits -->
+                <div class="page" id="un-invoiced-visits-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Un Invoiced Visits</h2>
+                        <div class="alert-info">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>You have 5 un-invoiced visits requiring attention</span>
+                        </div>
+                    </div>
+                    <div class="un-invoiced-container">
+                        <div class="visits-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Client</th>
+                                        <th>Services</th>
+                                        <th>Staff</th>
+                                        <th>Amount</th>
+                                        <th>Days Overdue</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="un-invoiced-tbody">
+                                    <!-- Un-invoiced visits will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POS Retail -->
+                <div class="page" id="pos-retail-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>POS Retail</h2>
+                    </div>
+                    <div class="pos-retail-container">
+                        <div class="pos-products-section">
+                            <h3>Products</h3>
+                            <div class="product-categories">
+                                <button class="category-btn active">All</button>
+                                <button class="category-btn">Hair Care</button>
+                                <button class="category-btn">Skin Care</button>
+                                <button class="category-btn">Nails</button>
+                            </div>
+                            <div class="pos-products-grid" id="pos-retail-products">
+                                <!-- Products will be populated here -->
+                            </div>
+                        </div>
+                        <div class="pos-cart-section">
+                            <h3>Shopping Cart</h3>
+                            <div class="pos-cart-items" id="pos-retail-cart">
+                                <!-- Cart items will be populated here -->
+                            </div>
+                            <div class="pos-cart-summary">
+                                <div class="cart-total">
+                                    <span>Total:</span>
+                                    <span id="pos-retail-total">$0.00</span>
+                                </div>
+                                <button class="btn btn-primary checkout-btn">Process Sale</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POS Services -->
+                <div class="page" id="pos-services-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>POS Services</h2>
+                    </div>
+                    <div class="pos-services-container">
+                        <div class="service-selection">
+                            <h3>Select Client</h3>
+                            <select class="client-select">
+                                <option>Select Client</option>
+                                <option>Sarah Johnson</option>
+                                <option>Maria Garcia</option>
+                                <option>Jennifer Smith</option>
+                            </select>
+                        </div>
+                        <div class="pos-services-grid" id="pos-services-grid">
+                            <!-- Services will be populated here -->
+                        </div>
+                        <div class="pos-service-cart">
+                            <h3>Service Cart</h3>
+                            <div class="service-cart-items" id="service-cart-items">
+                                <!-- Service cart items will be populated here -->
+                            </div>
+                            <div class="service-cart-total">
+                                <span>Total:</span>
+                                <span id="service-cart-total">$0.00</span>
+                            </div>
+                            <button class="btn btn-primary">Process Service</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Staff Performance -->
+                <div class="page" id="staff-performance-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Staff Performance</h2>
+                        <div class="performance-filters">
+                            <select class="filter-select">
+                                <option>This Week</option>
+                                <option>This Month</option>
+                                <option>This Quarter</option>
+                                <option>This Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="staff-performance-container">
+                        <div class="performance-grid" id="performance-grid">
+                            <!-- Staff performance cards will be populated here -->
+                        </div>
+                        <div class="performance-details">
+                            <h3>Performance Metrics</h3>
+                            <div class="metrics-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Staff Member</th>
+                                            <th>Appointments</th>
+                                            <th>Revenue</th>
+                                            <th>Commission</th>
+                                            <th>Rating</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="performance-tbody">
+                                        <!-- Performance data will be populated here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eye lashes Record -->
+                <div class="page" id="eyelashes-records-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Eye Lashes Records</h2>
+                        <button class="btn btn-primary" id="add-eyelashes-record-btn">
+                            <i class="fas fa-plus"></i> Add Record
+                        </button>
+                    </div>
+                    <div class="eyelashes-records-container">
+                        <div class="records-filters">
+                            <input type="text" placeholder="Search client..." class="search-input">
+                            <select class="filter-select">
+                                <option>All Records</option>
+                                <option>Last 30 Days</option>
+                                <option>Last 3 Months</option>
+                                <option>Last Year</option>
+                            </select>
+                        </div>
+                        <div class="records-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Client</th>
+                                        <th>Service Type</th>
+                                        <th>Technician</th>
+                                        <th>Notes</th>
+                                        <th>Next Appointment</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="eyelashes-tbody">
+                                    <!-- Eyelashes records will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facial records -->
+                <div class="page" id="facial-records-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Facial Records</h2>
+                        <button class="btn btn-primary" id="add-facial-record-btn">
+                            <i class="fas fa-plus"></i> Add Record
+                        </button>
+                    </div>
+                    <div class="facial-records-container">
+                        <div class="records-filters">
+                            <input type="text" placeholder="Search client..." class="search-input">
+                            <select class="filter-select">
+                                <option>All Records</option>
+                                <option>Last 30 Days</option>
+                                <option>Last 3 Months</option>
+                                <option>Last Year</option>
+                            </select>
+                        </div>
+                        <div class="records-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Client</th>
+                                        <th>Treatment Type</th>
+                                        <th>Products Used</th>
+                                        <th>Esthetician</th>
+                                        <th>Skin Analysis</th>
+                                        <th>Notes</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="facial-tbody">
+                                    <!-- Facial records will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Records -->
+                <div class="page" id="color-records-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Color Records</h2>
+                        <button class="btn btn-primary" id="add-color-record-btn">
+                            <i class="fas fa-plus"></i> Add Record
+                        </button>
+                    </div>
+                    <div class="color-records-container">
+                        <div class="records-filters">
+                            <input type="text" placeholder="Search client..." class="search-input">
+                            <select class="filter-select">
+                                <option>All Records</option>
+                                <option>Last 30 Days</option>
+                                <option>Last 3 Months</option>
+                                <option>Last Year</option>
+                            </select>
+                        </div>
+                        <div class="records-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Client</th>
+                                        <th>Formula</th>
+                                        <th>Natural Color</th>
+                                        <th>Target Color</th>
+                                        <th>Application</th>
+                                        <th>Stylist</th>
+                                        <th>Notes</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="color-tbody">
+                                    <!-- Color records will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dispatch Notes Listing -->
+                <div class="page" id="dispatch-notes-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Dispatch Notes Listing</h2>
+                        <button class="btn btn-primary" id="create-dispatch-btn">
+                            <i class="fas fa-plus"></i> Create Dispatch
+                        </button>
+                    </div>
+                    <div class="dispatch-notes-container">
+                        <div class="dispatch-filters">
+                            <input type="date" class="date-input">
+                            <select class="filter-select">
+                                <option>All Status</option>
+                                <option>Pending</option>
+                                <option>In Transit</option>
+                                <option>Delivered</option>
+                            </select>
+                        </div>
+                        <div class="dispatch-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Dispatch #</th>
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                        <th>Destination</th>
+                                        <th>Status</th>
+                                        <th>Driver</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dispatch-tbody">
+                                    <!-- Dispatch notes will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Receiving Notes -->
+                <div class="page" id="receiving-notes-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Receiving Notes</h2>
+                        <button class="btn btn-primary" id="add-receiving-btn">
+                            <i class="fas fa-plus"></i> Add Receiving
+                        </button>
+                    </div>
+                    <div class="receiving-notes-container">
+                        <div class="receiving-filters">
+                            <input type="date" class="date-input">
+                            <select class="filter-select">
+                                <option>All Suppliers</option>
+                                <option>Beauty Supply Co.</option>
+                                <option>Professional Colors</option>
+                                <option>Nail Pro</option>
+                            </select>
+                        </div>
+                        <div class="receiving-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Note #</th>
+                                        <th>Date</th>
+                                        <th>Supplier</th>
+                                        <th>Items</th>
+                                        <th>Quantity</th>
+                                        <th>Received By</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="receiving-tbody">
+                                    <!-- Receiving notes will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Period Bookings -->
+                <div class="page" id="period-bookings-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Period Bookings</h2>
+                        <div class="period-controls">
+                            <input type="date" id="period-start" class="date-input">
+                            <span>to</span>
+                            <input type="date" id="period-end" class="date-input">
+                            <button class="btn btn-secondary" id="generate-period-btn">
+                                <i class="fas fa-chart-bar"></i> Generate Report
+                            </button>
+                        </div>
+                    </div>
+                    <div class="period-bookings-container">
+                        <div class="period-summary">
+                            <div class="summary-card">
+                                <h3>Total Bookings</h3>
+                                <p class="summary-number">45</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>Revenue</h3>
+                                <p class="summary-number">$3,250</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>Occupancy Rate</h3>
+                                <p class="summary-number">82%</p>
+                            </div>
+                        </div>
+                        <div class="period-bookings-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Day</th>
+                                        <th>Total Bookings</th>
+                                        <th>Revenue</th>
+                                        <th>Staff Utilization</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="period-tbody">
+                                    <!-- Period bookings will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent Wise Bookings -->
+                <div class="page" id="agent-wise-bookings-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Agent Wise Bookings</h2>
+                        <div class="agent-filters">
+                            <select class="filter-select">
+                                <option>All Agents</option>
+                                <option>Agent 1</option>
+                                <option>Agent 2</option>
+                                <option>Agent 3</option>
+                            </select>
+                            <input type="date" class="date-input">
+                        </div>
+                    </div>
+                    <div class="agent-bookings-container">
+                        <div class="agent-performance-grid" id="agent-performance-grid">
+                            <!-- Agent performance cards will be populated here -->
+                        </div>
+                        <div class="agent-bookings-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Agent</th>
+                                        <th>Total Bookings</th>
+                                        <th>Confirmed</th>
+                                        <th>Cancelled</th>
+                                        <th>Revenue</th>
+                                        <th>Commission</th>
+                                        <th>Performance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="agent-tbody">
+                                    <!-- Agent bookings will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clients Page -->
+                <div class="page" id="clients-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Clients</h2>
+                        <button class="btn btn-primary" id="new-client-btn">
+                            <i class="fas fa-plus"></i> Add Client
+                        </button>
+                    </div>
+                    <div class="clients-container">
+                        <div class="client-filters">
+                            <input type="text" placeholder="Search clients..." class="search-input">
+                            <select class="filter-select">
+                                <option>All Clients</option>
+                                <option>Active</option>
+                                <option>Inactive</option>
+                                <option>New</option>
+                            </select>
+                        </div>
+                        <div class="clients-grid" id="clients-list">
+                            <!-- Clients will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Staff Page -->
+                <div class="page" id="staff-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Staff Management</h2>
+                        <button class="btn btn-primary" id="add-staff-btn">
+                            <i class="fas fa-plus"></i> Add Staff Member
+                        </button>
+                    </div>
+                    <div class="staff-grid" id="staff-list">
+                        <!-- Staff will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Services Page -->
+                <div class="page" id="services-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Services & Pricing</h2>
+                        <button class="btn btn-primary" id="add-service-btn">
+                            <i class="fas fa-plus"></i> Add Service
+                        </button>
+                    </div>
+                    <div class="services-grid" id="services-list">
+                        <!-- Services will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Inventory Page -->
+                <div class="page" id="inventory-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Inventory Management</h2>
+                        <button class="btn btn-primary" id="add-product-btn">
+                            <i class="fas fa-plus"></i> Add Product
+                        </button>
+                    </div>
+                    <div class="inventory-container">
+                        <div class="inventory-filters">
+                            <input type="text" placeholder="Search products..." class="search-input">
+                            <select class="filter-select">
+                                <option>All Products</option>
+                                <option>In Stock</option>
+                                <option>Low Stock</option>
+                                <option>Out of Stock</option>
+                            </select>
+                        </div>
+                        <div class="products-grid" id="products-list">
+                            <!-- Products will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POS Page -->
+                <div class="page" id="pos-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Point of Sale</h2>
+                    </div>
+                    <div class="pos-container">
+                        <div class="pos-products">
+                            <h3>Products & Services</h3>
+                            <div class="pos-categories">
+                                <button class="category-btn active">All</button>
+                                <button class="category-btn">Hair Services</button>
+                                <button class="category-btn">Beauty</button>
+                                <button class="category-btn">Products</button>
+                            </div>
+                            <div class="pos-items-grid" id="pos-items">
+                                <!-- POS items will be populated here -->
+                            </div>
+                        </div>
+                        <div class="pos-cart">
+                            <h3>Shopping Cart</h3>
+                            <div class="cart-items" id="cart-items">
+                                <!-- Cart items will be populated here -->
+                            </div>
+                            <div class="cart-summary">
+                                <div class="cart-total">
+                                    <span>Total:</span>
+                                    <span id="cart-total">$0.00</span>
+                                </div>
+                                <button class="btn btn-primary checkout-btn">Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Page -->
+                <div class="page" id="reports-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Reports & Analytics</h2>
+                        <div class="report-filters">
+                            <select class="filter-select">
+                                <option>Last 7 Days</option>
+                                <option>Last 30 Days</option>
+                                <option>Last 3 Months</option>
+                                <option>Last Year</option>
+                            </select>
+                            <button class="btn btn-secondary">Export</button>
+                        </div>
+                    </div>
+                    <div class="reports-grid">
+                        <div class="report-card">
+                            <h3>Revenue Overview</h3>
+                            <div class="chart-container">
+                                <canvas id="revenue-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="report-card">
+                            <h3>Service Popularity</h3>
+                            <div class="chart-container">
+                                <canvas id="services-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="report-card">
+                            <h3>Client Retention</h3>
+                            <div class="chart-container">
+                                <canvas id="retention-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Page -->
+                <div class="page" id="settings-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Settings</h2>
+                    </div>
+                    <div class="settings-container">
+                        <div class="settings-section">
+                            <h3>Salon Information</h3>
+                            <div class="form-group">
+                                <label>Salon Name</label>
+                                <input type="text" value="SalonPro" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input type="text" value="123 Main St, City, State 12345" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" value="(555) 123-4567" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" value="info@salonpro.com" class="form-input">
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3>Business Hours</h3>
+                            <div class="hours-grid">
+                                <div class="hours-item">
+                                    <label>Monday</label>
+                                    <input type="time" value="09:00" class="time-input">
+                                    <span>to</span>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                                <div class="hours-item">
+                                    <label>Tuesday</label>
+                                    <input type="time" value="09:00" class="time-input">
+                                    <span>to</span>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                                <div class="hours-item">
+                                    <label>Wednesday</label>
+                                    <input type="time" value="09:00" class="time-input">
+                                    <span>to</span>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                                <div class="hours-item">
+                                    <label>Thursday</label>
+                                    <input type="time" value="09:00" class="time-input">
+                                    <span>to</span>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                                <div class="hours-item">
+                                    <label>Friday</label>
+                                    <input type="time" value="09:00" class="time-input">
+                                    <span>to</span>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                                <div class="hours-item">
+                                    <label>Saturday</label>
+                                    <input type="time" value="09:00" class="time-input">
+                                    <span>to</span>
+                                    <input type="time" value="17:00" class="time-input">
+                                </div>
+                                <div class="hours-item">
+                                    <label>Sunday</label>
+                                    <input type="checkbox" class="closed-checkbox">
+                                    <span>Closed</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Save Settings</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
